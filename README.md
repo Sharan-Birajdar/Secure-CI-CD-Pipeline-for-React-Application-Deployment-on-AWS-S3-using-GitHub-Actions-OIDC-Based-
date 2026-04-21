@@ -1,4 +1,4 @@
-# 🚀 Secure CI/CD Pipeline for React Deployment on AWS S3
+# 🚀 Secure CI/CD Pipeline for React Deployment on AWS S3 AS Static Website
 
 ## 📌 Project Overview
 
