@@ -142,14 +142,3 @@ Your application will be available via the S3 static website endpoint.
 * Implement cache invalidation
 * Add monitoring & logging
 
----
-
-## 🤝 Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
-
----
-
-## 📜 License
-
-This project is licensed under the MIT License.
