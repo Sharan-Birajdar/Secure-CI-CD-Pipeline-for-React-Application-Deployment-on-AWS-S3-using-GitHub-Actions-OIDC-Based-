@@ -22,10 +22,14 @@ jobs:
         with:
           node-version: 18
 
+      # ✅ FIX: run inside React project folder
       - name: Install Dependencies
+        working-directory: ./React_Single_Page_Website
         run: npm install
 
+      # ✅ FIX: build inside React project folder
       - name: Build Project
+        working-directory: ./React_Single_Page_Website
         run: npm run build
 
       # Configure AWS using OIDC (BEST PRACTICE)
@@ -35,12 +39,7 @@ jobs:
           role-to-assume: arn:aws:iam::654485376127:role/github-actions-role
           aws-region: ap-south-1
 
+      # ✅ FIX: deploy correct build path
       - name: Upload to S3
         run: |
-          aws s3 sync build/ s3://bucket-for-npm-static-website --delete
-
-      - name: Set S3 Website Permissions (optional)
-        run: |
-          aws s3 cp s3://bucket-for-npm-static-website s3://bucket-for-npm-static-website \
-          --recursive \
-          --acl public-read
+          aws s3 sync ./React_Single_Page_Website/build s3://bucket-for-npm-static-website --delete
